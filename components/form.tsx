@@ -54,19 +54,19 @@ export default function Form() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <label className="block">from</label>
+          <label className="block mb-2">from</label>
           <input
-            type="text"
+            type="date"
             {...register("from")}
-            className="bg-transparent rounded-lg p-6 border border-pink-300"
+            className="bg-transparent rounded-lg p-6 border-2 border-pink-300 focus:ring-4 focus:ring-offset-2 focus:outline-none"
           />
         </div>
         <div>
-          <label className="block">to</label>
+          <label className="block mb-2">to</label>
           <input
-            type="text"
+            type="date"
             {...register("to")}
-            className="bg-transparent rounded-lg p-6 border border-pink-300"
+            className="bg-transparent rounded-lg p-6 border-2 border-pink-300 focus:ring-4 focus:ring-offset-2 focus:outline-none"
           />
         </div>
       </div>
@@ -75,7 +75,7 @@ export default function Form() {
           disabled={isPending || !isDirty}
           className="rounded-lg p-4 text-white bg-gradient-to-r from-blue-400 to-indigo-500 disabled:bg-gray-300"
         >
-          Go!
+          {isPending ? "Loading..." : "Submit"}
         </button>
       </div>
     </form>
